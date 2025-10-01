@@ -8,18 +8,18 @@ It fetches new articles from configured RSS sources automatically on a schedule.
 
 docker compose up --build
 
-First-time setup
+**First-time setup**
 
-Run database migrations:
+**Run database migrations:**
 docker compose run --rm web python manage.py migrate
 
-Create superuser for Django admin:
+**Create superuser for Django admin:**
 docker compose run --rm web python manage.py createsuperuser
 
-Collect static files:
+**Collect static files:**
 docker compose run --rm web python manage.py collectstatic --noinput
 
-You can run it directly:
+**You can run it directly:**
 docker compose run --rm web python manage.py shell
 from core.tasks import fetch_articles
 fetch_articles.delay()
